@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 # === LOAD DATA ===
-df = pd.read_csv(co2_thrust_data.csv)
+df = pd.read_csv('co2_thrust_data.csv')
 
 # Expect thrust and mass columns in the CSV
 t = df['time (s)'].astype(float).values
