@@ -14,12 +14,9 @@ m_car = 0.021 + m_sheet  - 0.048  # array, kg
 m_car = m_car + (float(input("Weight of car (g): ")) / 1000.0)
 
 # === INPUTS ===
-Fd_20 = float(input("Enter drag force (N) at 20 m/s: "))
-A = 1.0  # reference area kept as 1 m2
+Cd = float(input("Enter drag coefficient Cd: "))
+A = float(input("Enter frontal area (mm^2): ")) / 1000000
 rho = 1.225  # kg/m^3 (air density at sea level)
-# F_drag = k * v^2
-# Fd_20 = k * 20^2  => k = Fd_20 / 400
-k_drag = Fd_20 / 400.0
 mu = float(input("Enter rolling friction coefficient: "))
 
 # wheel parameters
@@ -57,7 +54,7 @@ while True:
 
     # resistive forces
     F_fric = mu * mass_car * 9.81
-    F_drag = k_drag * v[i-1]**2
+    F_drag = 0.5 * rho * Cd * A * v[i-1]**2
 
     # wheel angular acceleration from velocity difference
     omega_prev = v[i-1] / r_wheel
