@@ -81,8 +81,8 @@ while True:
     F_wheel_arr[i] = F_wheel
 
     # stop conditions
-    if x[i] >= 19.98575:
-        finish_time = time[i-1] + (19.98575 - x[i-1]) * (time[i]-time[i-1]) / (x[i]-x[i-1])
+    if x[i] >= 20:
+        finish_time = time[i-1] + (20 - x[i-1]) * (time[i]-time[i-1]) / (x[i]-x[i-1])
         print(f"Finish time: {finish_time*0.76 :.4f} s")
         break
     if v[i] <= 0.0 and i > i_max:
