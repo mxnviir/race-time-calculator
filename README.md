@@ -48,7 +48,7 @@ You will be prompted for three inputs:
 
 | Prompt | Description | Typical value |
 |--------|-------------|---------------|
-| Drag force at 20 m/s (N) | Aerodynamic drag on your car at 20 m/s | 0.05 – 0.5 N |
+| Drag force at 20 m/s (N) | Measured or estimated drag force on your car at a reference speed of 20 m/s | 0.05 – 0.5 N |
 | Rolling friction coefficient | Between wheels and track surface | 0.01 – 0.05 |
 | Wheel MOI (g·mm²) | Moment of inertia of one wheel | 50 – 500 g·mm² |
 
@@ -65,5 +65,5 @@ The simulator prints the interpolated finish time once the car crosses 20 m, or 
 ## Notes
 
 - Car base mass includes a 21 g empty canister weight (`m_car = 0.0212 + m_sheet`).
-- The drag model assumes quadratic scaling: `F_drag = F_drag_20 × (v / 20)²`.
+- The drag model uses quadratic scaling: `F_drag = F_drag_20 × (v / 20)²`, where `F_drag_20` is the drag force at the 20 m/s reference speed. The input is a force (N) rather than a drag coefficient (Cd) — since drag force is `½ρCdA·v²`, the frontal surface area (A) and air density (ρ) terms are already baked into the measured reference force and cancel out when scaling to other speeds, so Cd and A are not needed separately.
 - The track distance target is 20 metres.
