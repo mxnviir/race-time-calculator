@@ -48,9 +48,9 @@ You will be prompted for three inputs:
 
 | Prompt | Description | Typical value |
 |--------|-------------|---------------|
-| Drag force at 20 m/s (N) | Measured or estimated drag force on your car at a reference speed of 20 m/s | 0.05 – 0.5 N |
-| Rolling friction coefficient | Between wheels and track surface | 0.01 – 0.05 |
-| Wheel MOI (g·mm²) | Moment of inertia of one wheel | 50 – 500 g·mm² |
+| Drag force at 20 m/s (N) | Measured or estimated drag force on your car at a reference speed of 20 m/s | 0.15 - 0.25 N |
+| Rolling friction coefficient | Between wheels and track surface | 0.01 – 0.05 (0.3 is a nice middle-ground for proffesional class cars)|
+| Wheel MOI (g·mm²) | Moment of inertia of one wheel | 150 – 300 g·mm² |
 
 The simulator prints the interpolated finish time once the car crosses 20 m, or reports if the car stops short.
 
