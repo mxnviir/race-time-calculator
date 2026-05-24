@@ -21,6 +21,7 @@ mu = float(input("Enter rolling friction coefficient: "))
 N_wheels = 4
 I_wheel = float(input("Enter wheel MOI (g·mm^2): ")) / 1_000_000_000
 r_wheel = 0.015  # m
+coef = float(input("Enter Time Coefficient (in %): ")) / 100
 
 # === SIMULATION ===
 v = np.zeros(len(t) * 10)
@@ -82,7 +83,7 @@ while True:
     # Stop conditions
     if x[i] >= 20:
         finish_time = time[i-1] + (20 - x[i-1]) * (time[i]-time[i-1]) / (x[i]-x[i-1])
-        print(f"Finish time: {finish_time*0.76 :.4f} s")
+        print(f"Finish time: {finish_time*coef :.4f} s")
         break
 
     if v[i] <= 0.0 and i > i_max:
