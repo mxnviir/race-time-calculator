@@ -2,7 +2,7 @@
 
 A physics-based simulator for CO2-powered dragster cars (Doesn't have to be STEM Racing!) that predicts 20-metre track time using thrust, drag, rolling friction, and wheel rotational inertia.
 
-Works perfectly with our [OpenFOAM Auto-CFD](github.com/mxnviir/openfoam-for-stem) program. 
+Works perfectly with our [OpenFOAM Auto-CFD](https://github.com/mxnviir/openfoam-for-stem) program. 
 
 ## Overview
 
