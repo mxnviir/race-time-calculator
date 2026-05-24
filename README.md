@@ -1,6 +1,7 @@
 # Race Time Calculator
 
-A physics-based simulator for CO2-powered dragster cars that predicts 20-metre track time using thrust, drag, rolling friction, and wheel rotational inertia.
+A physics-based simulator for CO2-powered dragster cars (Doesn't have to be STEM Racing!) that predicts 20-metre track time using thrust, drag, rolling friction, and wheel rotational inertia.
+Works perfectly with our [OpenFOAM Auto-CFD](github.com/mxnviir/openfoam-for-stem) program. 
 
 ## Overview
 
@@ -16,13 +17,13 @@ The simulator integrates Newton's second law over time using CO2 thrust data fro
 > **The thrust values in `co2_thrust_data.csv` are simulated / modelled data, not measured real-world values.**
 > They are intended as a reasonable approximation of a CO2 canister discharge curve for educational and design purposes only.
 
-Because the data is simulated, predicted track times will likely differ from actual times on the day. To account for this, a **calibration coefficient** should be applied:
+Because the data is simulated, predicted track times will likely differ from actual times on the day. To account for this, a **time coefficient** is applied:
 
 ```
 actual_time ≈ predicted_time × coefficient
 ```
 
-After running your car on a real track, divide your measured time by the simulator's predicted time to get your coefficient. Apply this to future predictions to bring them in line with reality. Typical values sit between **0.85 and 1.15** depending on canister brand, car mass, and track conditions.
+After running your car on a real track, divide your measured time by the simulator's predicted time to get your coefficient. Apply this to future predictions to bring them in line with reality. Typical values sit between **0.85 and 1.1** depending on the canisters, track conditions and sample size.
 
 ## Requirements
 
